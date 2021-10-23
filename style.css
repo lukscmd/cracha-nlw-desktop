@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  --black: hsla(240, 6%, 13%, 1);
+  --grey-white: hsl(240, 9%, 89%);
+  --grey: hsla(240, 9%, 89%, 1);
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  display: grid;
+  place-items: center;
+  background: #121214;
+  background-image: linear-gradient(
+    161.24deg,
+    #1b9e1b -15.25%,
+    #251897 111.89%
+  );
+  background-position: center;
+  background-size: cover;
+}
+main {
+  width: 358px;
+  height: 540px;
+  margin: auto;
+  background: #202024;
+  color: var(--grey-white);
+  border-radius: 7px;
+}
+.gradient {
+  background: linear-gradient(161.24deg, #ff008e -15.25%, #01463a 111.89%);
+  position: absolute;
+  width: 358px;
+  height: 540px;
+  color: var(--grey-white);
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.broken {
+  position: absolute;
+  background: black;
+  z-index: 1;
+  width: 100px;
+  height: 12px;
+  margin-left: 8.3rem;
+  margin-top: 1.5rem;
+  border-radius: 1.5rem;
+}
+.ribbon {
+  position: absolute;
+  z-index: 2;
+  width: 80px;
+  height: 750px;
+  background: linear-gradient(161.24deg, #ff008e -15.25%, #ffcd1e 111.89%);
+  top: 0;
+  margin-top: -45rem;
+  margin-left: 8.9rem;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 358px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--grey);
+  margin-top: -7rem;
+}
+.avatar {
+  /*(calculo REM): Verifica a largura (width) da imagem = 160px | 
+  Verifica o pixel padrão da fonte da página que é 16px | 
+  1 REM = 16px | 
+  Então temos: 160 / 16 = 10 que será o tamanho em REM do elemento que está sendo manipulado no seletor*/
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative;
+}
+.avatar span {
+  /*valor absoluto serve para criar níveis de acima*/
+  position: absolute;
+  top: -15px;
+  z-index: 1; /*eixo de profundidade, serve para sobrescrever algum elemento*/
+}
+/*(> img) serve para usar como seletor apenas a imagem do primeiro nível que está sendo usada na classe*/
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  /* (object-fit) especifica como o conteúdo de um elemento substituído deve ser 
+  ajustado à caixa estabelecida pela altura e largura usadas.*/
+  object-fit: cover;
+  /*Define formas para a imagem | https://bennettfeely.com/clippy*/
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+a {
+  color: rgb(206, 137, 10);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+p {
+  margin-top: 2rem;
+}
+ul {
+  margin-top: 2.5rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
